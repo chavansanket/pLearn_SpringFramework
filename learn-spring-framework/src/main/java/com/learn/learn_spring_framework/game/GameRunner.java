@@ -1,18 +1,24 @@
 package com.learn.learn_spring_framework.game;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
-	private MarioGame game;
+//	private MarioGame game;
+	@Autowired
+	private GamingConsole gameInterface;
 	
-	public GameRunner(MarioGame game) {
-		this.game = game;
+	public GameRunner(GamingConsole game) {
+		this.gameInterface = game;
 	}
 
 	public void run() {
 //		System.out.println(game);
-		game.up();
-		game.down();
-		game.left();
-		game.right();
+		gameInterface.up();
+		gameInterface.down();
+		gameInterface.left();
+		gameInterface.right();
 		
 	}
 	
